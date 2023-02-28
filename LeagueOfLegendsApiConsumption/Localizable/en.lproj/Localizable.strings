@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  LeagueOfLegendsApiConsumption
+
+  Created by Gabriel Pagotto on 27/02/23.
+  
+*/
+
+// Settings UI
+"Settings.Title"="Settings";
+"Settings.ServerSectionHeader"="Server";
+"Settings.ServerSectionFooter" = "This section is used to define which League of Legends servers you want to use, so that the maximum possible performance can be guaranteed for the application.";
+"Settings.ServerByCountry"="Server by country";
+"Settings.ServerByContinent"="Server by continent";
