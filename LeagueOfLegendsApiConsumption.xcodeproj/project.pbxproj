@@ -62,6 +62,7 @@
 		E4DFFB5729AD7EB60014A4DE /* LeagueOfLegendsApiConsumption */ = {
 			isa = PBXGroup;
 			children = (
+				E4DFFB7A29AECA6E0014A4DE /* Globals */,
 				E4DFFB7929AEBD910014A4DE /* Localizable */,
 				E4DFFB6829AD7F910014A4DE /* Modules */,
 				E4DFFB6629AD7F7C0014A4DE /* Core */,
@@ -129,6 +130,13 @@
 				E4DFFB7729AD8C610014A4DE /* Localizable.strings */,
 			);
 			path = Localizable;
+			sourceTree = "<group>";
+		};
+		E4DFFB7A29AECA6E0014A4DE /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Globals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

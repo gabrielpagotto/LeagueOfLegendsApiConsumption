@@ -26,7 +26,7 @@ struct SettingsUI: View {
                         HStack {
                             Text("Settings.ServerByCountry")
                             Spacer()
-                            Text("br1.api.riotgames.com")
+                            Text(viewModel.ddragonPlatformRouting.rawValue)
                                 .font(.caption)
                                 .bold()
                         }
@@ -43,14 +43,20 @@ struct SettingsUI: View {
                         HStack {
                             Text("Settings.ServerByContinent")
                             Spacer()
-                            Text("americas.api.riotgames.com")
+                            Text(viewModel.ddragonRegionalRouting.rawValue)
                                 .font(.caption)
                                 .bold()
                         }
                     }
                 }
                 Section (header: Text("Settings.ApiVersionSectionHeader")) {
-                    Text("Settings.ApiVersion")
+                    HStack {
+                        Text("Settings.ApiVersion")
+                        Spacer()
+                        Text(viewModel.ddragonVersion)
+                            .font(.caption)
+                            .bold()
+                    }
                 }
             }
             .navigationTitle("Settings.Title")
