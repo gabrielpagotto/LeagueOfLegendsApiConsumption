@@ -12,3 +12,5 @@
 "Settings.ServerSectionFooter" = "This section is used to define which League of Legends servers you want to use, so that the maximum possible performance can be guaranteed for the application.";
 "Settings.ServerByCountry"="Server by country";
 "Settings.ServerByContinent"="Server by continent";
+"Settings.ApiVersion"="League of Legends version";
+"Settings.ApiVersionSectionHeader"="Version";

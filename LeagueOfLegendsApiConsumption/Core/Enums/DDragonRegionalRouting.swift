@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DDragonRegionalRouting : String {
+enum DDragonRegionalRouting : String, CaseIterable {
     case AMERICAS = "americas.api.riotgames.com"
     case ASIA = "asia.api.riotgames.com"
     case EUROPE = "europe.api.riotgames.com"
