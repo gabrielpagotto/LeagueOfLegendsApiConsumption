@@ -5,4 +5,12 @@
   Created by Gabriel Pagotto on 27/02/23.
   
 */
-"settings"="Configurações";
+
+// Settings UI
+"Settings.Title"="Configurações";
+"Settings.ServerSectionHeader"="Servidor";
+"Settings.ServerSectionFooter" = "Esta seção é usada para definir quais servidores de League of Legends você deseja usar, para que o máximo desempenho possível seja garantido para o aplicativo.";
+"Settings.ServerByCountry"="Servidor por país";
+"Settings.ServerByContinent"="Servidor por continente";
+"Settings.ApiVersion"="Versão do League of Legends";
+"Settings.ApiVersionSectionHeader"="Versão";
