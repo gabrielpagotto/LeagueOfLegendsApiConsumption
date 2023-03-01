@@ -16,17 +16,19 @@ struct SettingsUI: View {
                 Section(header: Text("Settings.ServerSectionHeader"), footer: Text("Settings.ServerSectionFooter")) {
                     NavigationLink {
                         List (DDragonPlatformRouting.allCases, id: \.self) { ddragonPlatformRouting in
-                            HStack {
-                                Text(ddragonPlatformRouting.rawValue)
-                                Spacer()
-                                if ddragonSettings.ddragonPlatformRouting == ddragonPlatformRouting {
-                                    Image(systemName: "checkmark")
-                                        .bold()
-                                        .foregroundColor(Color.accentColor)
-                                }
-                            }
-                            .onTapGesture {
+                            Button {
                                 ddragonSettings.ddragonPlatformRouting = ddragonPlatformRouting
+                            } label: {
+                                HStack {
+                                    Text(ddragonPlatformRouting.rawValue)
+                                        .foregroundColor(.primary)
+                                    Spacer()
+                                    if ddragonSettings.ddragonPlatformRouting == ddragonPlatformRouting {
+                                        Image(systemName: "checkmark")
+                                            .bold()
+                                            .foregroundColor(Color.accentColor)
+                                    }
+                                }
                             }
                         }
                         .pickerStyle(MenuPickerStyle())
@@ -42,17 +44,19 @@ struct SettingsUI: View {
                     }
                     NavigationLink {
                         List (DDragonRegionalRouting.allCases, id: \.self) { ddragonRegionalRouting in
-                            HStack {
-                                Text(ddragonRegionalRouting.rawValue)
-                                Spacer()
-                                if ddragonSettings.ddragonRegionalRouting == ddragonRegionalRouting {
-                                    Image(systemName: "checkmark")
-                                        .bold()
-                                        .foregroundColor(Color.accentColor)
-                                }
-                            }
-                            .onTapGesture {
+                            Button {
                                 ddragonSettings.ddragonRegionalRouting = ddragonRegionalRouting
+                            } label: {
+                                HStack {
+                                    Text(ddragonRegionalRouting.rawValue)
+                                        .foregroundColor(.primary)
+                                    Spacer()
+                                    if ddragonSettings.ddragonRegionalRouting == ddragonRegionalRouting {
+                                        Image(systemName: "checkmark")
+                                            .bold()
+                                            .foregroundColor(Color.accentColor)
+                                    }
+                                }
                             }
                         }
                         .navigationTitle("Settings.ServerByContinent")
