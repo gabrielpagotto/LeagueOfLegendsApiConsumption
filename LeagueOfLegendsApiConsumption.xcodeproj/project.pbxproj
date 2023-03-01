@@ -16,6 +16,7 @@
 		E4DFFB7029AD86790014A4DE /* DDragonPlatformRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB6F29AD86790014A4DE /* DDragonPlatformRouting.swift */; };
 		E4DFFB7229AD880E0014A4DE /* DDragonRegionalRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB7129AD880E0014A4DE /* DDragonRegionalRouting.swift */; };
 		E4DFFB7529AD8C610014A4DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4DFFB7729AD8C610014A4DE /* Localizable.strings */; };
+		E4DFFB7D29AECBBA0014A4DE /* DDragonSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB7C29AECBBA0014A4DE /* DDragonSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E4DFFB7129AD880E0014A4DE /* DDragonRegionalRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonRegionalRouting.swift; sourceTree = "<group>"; };
 		E4DFFB7629AD8C610014A4DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E4DFFB7829AD8CA20014A4DE /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; usesTabs = 0; };
+		E4DFFB7C29AECBBA0014A4DE /* DDragonSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		E4DFFB6629AD7F7C0014A4DE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E4DFFB7B29AECB190014A4DE /* Repositories */,
 				E4DFFB6E29AD84370014A4DE /* Enums */,
 				E4DFFB6729AD7F860014A4DE /* Models */,
 			);
@@ -135,8 +138,16 @@
 		E4DFFB7A29AECA6E0014A4DE /* Globals */ = {
 			isa = PBXGroup;
 			children = (
+				E4DFFB7C29AECBBA0014A4DE /* DDragonSettings.swift */,
 			);
 			path = Globals;
+			sourceTree = "<group>";
+		};
+		E4DFFB7B29AECB190014A4DE /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 				E4DFFB6B29AD7FDB0014A4DE /* SettingsUI.swift in Sources */,
 				E4DFFB7229AD880E0014A4DE /* DDragonRegionalRouting.swift in Sources */,
 				E4DFFB7029AD86790014A4DE /* DDragonPlatformRouting.swift in Sources */,
+				E4DFFB7D29AECBBA0014A4DE /* DDragonSettings.swift in Sources */,
 				E4DFFB5B29AD7EB60014A4DE /* ContentView.swift in Sources */,
 				E4DFFB5929AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift in Sources */,
 				E4DFFB6D29AD7FF30014A4DE /* SettingsViewModel.swift in Sources */,

@@ -8,34 +8,37 @@
 import SwiftUI
 
 struct SettingsUI: View {
-    @ObservedObject private(set) var viewModel = SettingsViewModel()
+    @EnvironmentObject private var ddragonSettings: DDragonSettings
     
     var body: some View {
         NavigationView {
             List {
                 Section(header: Text("Settings.ServerSectionHeader"), footer: Text("Settings.ServerSectionFooter")) {
                     NavigationLink {
-                        List {
-                            ForEach(DDragonPlatformRouting.allCases, id: \.self) { ddragonPlatformRouting in
-                                Text(ddragonPlatformRouting.rawValue)
-                            }
+                        List (DDragonPlatformRouting.allCases, id: \.self) { ddragonPlatformRouting in
+                            Label(ddragonPlatformRouting.rawValue, systemImage: ddragonSettings.ddragonPlatformRouting == ddragonPlatformRouting ? "checkmark" : "")
+                                .onTapGesture {
+                                    ddragonSettings.ddragonPlatformRouting = ddragonPlatformRouting
+                                }
                         }
+                        .pickerStyle(MenuPickerStyle())
                         .navigationTitle("Settings.ServerByCountry")
                         .navigationBarTitleDisplayMode(.inline)
                     } label: {
                         HStack {
                             Text("Settings.ServerByCountry")
                             Spacer()
-                            Text(viewModel.ddragonPlatformRouting.rawValue)
+                            Text(ddragonSettings.ddragonPlatformRouting.rawValue)
                                 .font(.caption)
                                 .bold()
                         }
                     }
                     NavigationLink {
-                        List {
-                            ForEach(DDragonRegionalRouting.allCases, id: \.self) { ddragonRegionalRouting in
-                                Text(ddragonRegionalRouting.rawValue)
-                            }
+                        List (DDragonRegionalRouting.allCases, id: \.self) { ddragonRegionalRouting in
+                            Label(ddragonRegionalRouting.rawValue, systemImage: ddragonSettings.ddragonRegionalRouting == ddragonRegionalRouting ? "checkmark" : "")
+                                .onTapGesture {
+                                    ddragonSettings.ddragonRegionalRouting = ddragonRegionalRouting
+                                }
                         }
                         .navigationTitle("Settings.ServerByContinent")
                         .navigationBarTitleDisplayMode(.inline)
@@ -43,17 +46,17 @@ struct SettingsUI: View {
                         HStack {
                             Text("Settings.ServerByContinent")
                             Spacer()
-                            Text(viewModel.ddragonRegionalRouting.rawValue)
+                            Text(ddragonSettings.ddragonRegionalRouting.rawValue)
                                 .font(.caption)
                                 .bold()
                         }
                     }
                 }
-                Section (header: Text("Settings.ApiVersionSectionHeader")) {
+                Section(header: Text("Settings.ApiVersionSectionHeader")) {
                     HStack {
                         Text("Settings.ApiVersion")
                         Spacer()
-                        Text(viewModel.ddragonVersion)
+                        Text(ddragonSettings.ddragonVersion)
                             .font(.caption)
                             .bold()
                     }
@@ -67,5 +70,6 @@ struct SettingsUI: View {
 struct SettingsUI_Previews: PreviewProvider {
     static var previews: some View {
         SettingsUI()
+            .environmentObject(DDragonSettings())
     }
 }
