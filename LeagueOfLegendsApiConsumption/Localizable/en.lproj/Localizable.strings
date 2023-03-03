@@ -7,7 +7,7 @@
 */
 
 // Home UI
-"Home.Title"="Home"
+"Home.Title"="Home";
 
 // Settings UI
 "Settings.Title"="Settings";

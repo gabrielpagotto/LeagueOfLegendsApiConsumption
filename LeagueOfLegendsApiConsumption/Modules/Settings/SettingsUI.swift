@@ -20,6 +20,9 @@ struct SettingsUI: View {
                                 ddragonSettings.ddragonPlatformRouting = ddragonPlatformRouting
                             } label: {
                                 HStack {
+                                    Text(String(describing: ddragonPlatformRouting))
+                                        .foregroundColor(.secondary)
+                                        .frame(width: 50, alignment: .leading)
                                     Text(ddragonPlatformRouting.rawValue)
                                         .foregroundColor(.primary)
                                     Spacer()
@@ -40,6 +43,7 @@ struct SettingsUI: View {
                             Spacer()
                             Text(ddragonSettings.ddragonPlatformRouting.rawValue)
                                 .font(.caption)
+                                .foregroundColor(.secondary)
                         }
                     }
                     NavigationLink {
@@ -67,6 +71,7 @@ struct SettingsUI: View {
                             Spacer()
                             Text(ddragonSettings.ddragonRegionalRouting.rawValue)
                                 .font(.caption)
+                                .foregroundColor(.secondary)
                         }
                     }
                 }
@@ -76,6 +81,7 @@ struct SettingsUI: View {
                         Spacer()
                         Text(ddragonSettings.ddragonVersion)
                             .font(.caption)
+                            .foregroundColor(.secondary)
                     }
                 }
             }
