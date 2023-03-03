@@ -9,18 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            Text("Home")
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home.Title")
+            }
+            SettingsUI()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings.Title")
+                }
         }
-        .padding()
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(DDragonSettings())
     }
 }

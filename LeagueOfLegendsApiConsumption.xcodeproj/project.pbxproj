@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E48C698129B16F9500B49859 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C698029B16F9500B49859 /* SettingsState.swift */; };
 		E4DFFB5929AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB5829AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift */; };
 		E4DFFB5B29AD7EB60014A4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB5A29AD7EB60014A4DE /* ContentView.swift */; };
 		E4DFFB5D29AD7EB70014A4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DFFB5C29AD7EB70014A4DE /* Assets.xcassets */; };
 		E4DFFB6029AD7EB70014A4DE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DFFB5F29AD7EB70014A4DE /* Preview Assets.xcassets */; };
 		E4DFFB6B29AD7FDB0014A4DE /* SettingsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB6A29AD7FDB0014A4DE /* SettingsUI.swift */; };
-		E4DFFB6D29AD7FF30014A4DE /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB6C29AD7FF30014A4DE /* SettingsViewModel.swift */; };
 		E4DFFB7029AD86790014A4DE /* DDragonPlatformRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB6F29AD86790014A4DE /* DDragonPlatformRouting.swift */; };
 		E4DFFB7229AD880E0014A4DE /* DDragonRegionalRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB7129AD880E0014A4DE /* DDragonRegionalRouting.swift */; };
 		E4DFFB7529AD8C610014A4DE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4DFFB7729AD8C610014A4DE /* Localizable.strings */; };
@@ -20,13 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E48C698029B16F9500B49859 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		E4DFFB5529AD7EB60014A4DE /* LeagueOfLegendsApiConsumption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueOfLegendsApiConsumption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DFFB5829AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueOfLegendsApiConsumptionApp.swift; sourceTree = "<group>"; };
 		E4DFFB5A29AD7EB60014A4DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E4DFFB5C29AD7EB70014A4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4DFFB5F29AD7EB70014A4DE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4DFFB6A29AD7FDB0014A4DE /* SettingsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsUI.swift; sourceTree = "<group>"; };
-		E4DFFB6C29AD7FF30014A4DE /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		E4DFFB6F29AD86790014A4DE /* DDragonPlatformRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonPlatformRouting.swift; sourceTree = "<group>"; };
 		E4DFFB7129AD880E0014A4DE /* DDragonRegionalRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonRegionalRouting.swift; sourceTree = "<group>"; };
 		E4DFFB7629AD8C610014A4DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				E4DFFB6A29AD7FDB0014A4DE /* SettingsUI.swift */,
-				E4DFFB6C29AD7FF30014A4DE /* SettingsViewModel.swift */,
+				E48C698029B16F9500B49859 /* SettingsState.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -223,12 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4DFFB6B29AD7FDB0014A4DE /* SettingsUI.swift in Sources */,
+				E48C698129B16F9500B49859 /* SettingsState.swift in Sources */,
 				E4DFFB7229AD880E0014A4DE /* DDragonRegionalRouting.swift in Sources */,
 				E4DFFB7029AD86790014A4DE /* DDragonPlatformRouting.swift in Sources */,
 				E4DFFB7D29AECBBA0014A4DE /* DDragonSettings.swift in Sources */,
 				E4DFFB5B29AD7EB60014A4DE /* ContentView.swift in Sources */,
 				E4DFFB5929AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift in Sources */,
-				E4DFFB6D29AD7FF30014A4DE /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

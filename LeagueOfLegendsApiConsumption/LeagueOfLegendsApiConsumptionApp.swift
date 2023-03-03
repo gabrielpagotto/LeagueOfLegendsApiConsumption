@@ -11,7 +11,7 @@ import SwiftUI
 struct LeagueOfLegendsApiConsumptionApp: App {
     var body: some Scene {
         WindowGroup {
-            SettingsUI()
+            ContentView()
                 .environmentObject(DDragonSettings())
         }
     }
