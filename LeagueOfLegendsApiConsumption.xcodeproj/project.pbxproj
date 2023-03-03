@@ -10,6 +10,10 @@
 		E48C698129B16F9500B49859 /* SettingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C698029B16F9500B49859 /* SettingsState.swift */; };
 		E48C698329B174C000B49859 /* SettingsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C698229B174C000B49859 /* SettingsIntent.swift */; };
 		E48C698829B17A3A00B49859 /* DDragonVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48C698729B17A3A00B49859 /* DDragonVersionRepository.swift */; };
+		E4CCD8FE29B1930D0000ADBF /* MVIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCD8FD29B1930C0000ADBF /* MVIContainer.swift */; };
+		E4CCD90129B1935C0000ADBF /* MVIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCD90029B1935C0000ADBF /* MVIState.swift */; };
+		E4CCD90329B194510000ADBF /* MVIIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCD90229B194510000ADBF /* MVIIntent.swift */; };
+		E4CCD90529B1948F0000ADBF /* SettingsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CCD90429B1948F0000ADBF /* SettingsContainer.swift */; };
 		E4DFFB5929AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB5829AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift */; };
 		E4DFFB5B29AD7EB60014A4DE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DFFB5A29AD7EB60014A4DE /* ContentView.swift */; };
 		E4DFFB5D29AD7EB70014A4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4DFFB5C29AD7EB70014A4DE /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 		E48C698029B16F9500B49859 /* SettingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsState.swift; sourceTree = "<group>"; };
 		E48C698229B174C000B49859 /* SettingsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsIntent.swift; sourceTree = "<group>"; };
 		E48C698729B17A3A00B49859 /* DDragonVersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDragonVersionRepository.swift; sourceTree = "<group>"; };
+		E4CCD8FD29B1930C0000ADBF /* MVIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIContainer.swift; sourceTree = "<group>"; };
+		E4CCD90029B1935C0000ADBF /* MVIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIState.swift; sourceTree = "<group>"; };
+		E4CCD90229B194510000ADBF /* MVIIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVIIntent.swift; sourceTree = "<group>"; };
+		E4CCD90429B1948F0000ADBF /* SettingsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContainer.swift; sourceTree = "<group>"; };
 		E4DFFB5529AD7EB60014A4DE /* LeagueOfLegendsApiConsumption.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueOfLegendsApiConsumption.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DFFB5829AD7EB60014A4DE /* LeagueOfLegendsApiConsumptionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueOfLegendsApiConsumptionApp.swift; sourceTree = "<group>"; };
 		E4DFFB5A29AD7EB60014A4DE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +60,16 @@
 			children = (
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4CCD8FC29B192F40000ADBF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				E4CCD8FD29B1930C0000ADBF /* MVIContainer.swift */,
+				E4CCD90029B1935C0000ADBF /* MVIState.swift */,
+				E4CCD90229B194510000ADBF /* MVIIntent.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		E4DFFB4C29AD7EB60014A4DE = {
@@ -96,6 +114,7 @@
 		E4DFFB6629AD7F7C0014A4DE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E4CCD8FC29B192F40000ADBF /* Protocols */,
 				E4DFFB7B29AECB190014A4DE /* Repositories */,
 				E4DFFB6E29AD84370014A4DE /* Enums */,
 				E4DFFB6729AD7F860014A4DE /* Domain */,
@@ -124,6 +143,7 @@
 				E4DFFB6A29AD7FDB0014A4DE /* SettingsUI.swift */,
 				E48C698029B16F9500B49859 /* SettingsState.swift */,
 				E48C698229B174C000B49859 /* SettingsIntent.swift */,
+				E4CCD90429B1948F0000ADBF /* SettingsContainer.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -225,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CCD90129B1935C0000ADBF /* MVIState.swift in Sources */,
 				E48C698829B17A3A00B49859 /* DDragonVersionRepository.swift in Sources */,
+				E4CCD90329B194510000ADBF /* MVIIntent.swift in Sources */,
+				E4CCD8FE29B1930D0000ADBF /* MVIContainer.swift in Sources */,
 				E4DFFB6B29AD7FDB0014A4DE /* SettingsUI.swift in Sources */,
 				E48C698129B16F9500B49859 /* SettingsState.swift in Sources */,
+				E4CCD90529B1948F0000ADBF /* SettingsContainer.swift in Sources */,
 				E48C698329B174C000B49859 /* SettingsIntent.swift in Sources */,
 				E4DFFB7229AD880E0014A4DE /* DDragonRegionalRouting.swift in Sources */,
 				E4DFFB7029AD86790014A4DE /* DDragonPlatformRouting.swift in Sources */,

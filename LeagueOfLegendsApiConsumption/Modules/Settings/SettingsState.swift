@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SettingsState : ObservableObject {
+final class SettingsState : MVIState {
     
     @Published var ddragonPlatformRouting = DDragonPlatformRouting.LA1
     @Published var ddragonRegionalRouting = DDragonRegionalRouting.ASIA

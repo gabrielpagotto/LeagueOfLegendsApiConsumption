@@ -7,17 +7,17 @@
 
 import Foundation
 
-class SettingsIntent {
-    var settingsState: SettingsState
+final class SettingsIntent : MVIItent {
+    var state: SettingsState
     
-    init(settingsState: SettingsState) {
-        self.settingsState = settingsState
+    required init(_ state: SettingsState) {
+        self.state = state
     }
     
     @MainActor
     func fetchVersions() async {
-        settingsState.versionsIsLoading = true
-        settingsState.versions = await DDragonVersionRepository.versions()
-        settingsState.versionsIsLoading = false
+        state.versionsIsLoading = true
+        state.versions = await DDragonVersionRepository.versions()
+        state.versionsIsLoading = false
     }
 }
