@@ -12,7 +12,7 @@ struct LeagueOfLegendsApiConsumptionApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(DDragonSettings())
+                .environmentObject(SettingsState())
         }
     }
 }

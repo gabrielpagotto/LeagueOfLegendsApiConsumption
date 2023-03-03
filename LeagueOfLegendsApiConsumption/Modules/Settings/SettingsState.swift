@@ -7,6 +7,12 @@
 
 import Foundation
 
-class SettingsState {
+class SettingsState : ObservableObject {
+    
+    @Published var ddragonPlatformRouting = DDragonPlatformRouting.LA1
+    @Published var ddragonRegionalRouting = DDragonRegionalRouting.ASIA
+    @Published var ddragonVersion = "10.0"
+    @Published var versions: [String] = []
+    @Published var versionsIsLoading = true
     
 }

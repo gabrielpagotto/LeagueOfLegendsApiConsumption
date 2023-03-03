@@ -8,7 +8,16 @@
 import SwiftUI
 
 struct SettingsUI: View {
-    @EnvironmentObject private var ddragonSettings: DDragonSettings
+    @EnvironmentObject private var settingsState: SettingsState
+    
+    @MainActor
+    func fetchVersions() async {
+        if settingsState.versions.isEmpty {
+            settingsState.versionsIsLoading = true
+            settingsState.versions = await DDragonVersionRepository.versions()
+            settingsState.versionsIsLoading = false
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -17,7 +26,7 @@ struct SettingsUI: View {
                     NavigationLink {
                         List (DDragonPlatformRouting.allCases, id: \.self) { ddragonPlatformRouting in
                             Button {
-                                ddragonSettings.ddragonPlatformRouting = ddragonPlatformRouting
+                                settingsState.ddragonPlatformRouting = ddragonPlatformRouting
                             } label: {
                                 HStack {
                                     Text(String(describing: ddragonPlatformRouting))
@@ -26,7 +35,7 @@ struct SettingsUI: View {
                                     Text(ddragonPlatformRouting.rawValue)
                                         .foregroundColor(.primary)
                                     Spacer()
-                                    if ddragonSettings.ddragonPlatformRouting == ddragonPlatformRouting {
+                                    if settingsState.ddragonPlatformRouting == ddragonPlatformRouting {
                                         Image(systemName: "checkmark")
                                             .bold()
                                             .foregroundColor(Color.accentColor)
@@ -41,7 +50,7 @@ struct SettingsUI: View {
                         HStack {
                             Text("Settings.ServerByCountry")
                             Spacer()
-                            Text(ddragonSettings.ddragonPlatformRouting.rawValue)
+                            Text(settingsState.ddragonPlatformRouting.rawValue)
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
@@ -49,13 +58,13 @@ struct SettingsUI: View {
                     NavigationLink {
                         List (DDragonRegionalRouting.allCases, id: \.self) { ddragonRegionalRouting in
                             Button {
-                                ddragonSettings.ddragonRegionalRouting = ddragonRegionalRouting
+                                settingsState.ddragonRegionalRouting = ddragonRegionalRouting
                             } label: {
                                 HStack {
                                     Text(ddragonRegionalRouting.rawValue)
                                         .foregroundColor(.primary)
                                     Spacer()
-                                    if ddragonSettings.ddragonRegionalRouting == ddragonRegionalRouting {
+                                    if settingsState.ddragonRegionalRouting == ddragonRegionalRouting {
                                         Image(systemName: "checkmark")
                                             .bold()
                                             .foregroundColor(Color.accentColor)
@@ -69,19 +78,51 @@ struct SettingsUI: View {
                         HStack {
                             Text("Settings.ServerByContinent")
                             Spacer()
-                            Text(ddragonSettings.ddragonRegionalRouting.rawValue)
+                            Text(settingsState.ddragonRegionalRouting.rawValue)
                                 .font(.caption)
                                 .foregroundColor(.secondary)
                         }
                     }
                 }
                 Section(header: Text("Settings.ApiVersionSectionHeader")) {
-                    HStack {
-                        Text("Settings.ApiVersion")
-                        Spacer()
-                        Text(ddragonSettings.ddragonVersion)
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                    NavigationLink {
+                        Group {
+                            if settingsState.versionsIsLoading {
+                                Text("Carregando...")
+                            } else {
+                                List (settingsState.versions, id: \.self) { ddragonVersion in
+                                    Button {
+                                        settingsState.ddragonVersion = ddragonVersion
+                                    } label: {
+                                        HStack {
+                                            Text(ddragonVersion)
+                                                .foregroundColor(.primary)
+                                            Spacer()
+                                            if settingsState.ddragonVersion == ddragonVersion {
+                                                Image(systemName: "checkmark")
+                                                    .bold()
+                                                    .foregroundColor(Color.accentColor)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .navigationTitle("Settings.ApiVersion")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .onAppear {
+                            Task {
+                                await fetchVersions()
+                            }
+                        }
+                    } label: {
+                        HStack {
+                            Text("Settings.ApiVersion")
+                            Spacer()
+                            Text(settingsState.ddragonVersion)
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
@@ -90,9 +131,12 @@ struct SettingsUI: View {
     }
 }
 
+
+#if DEBUG
 struct SettingsUI_Previews: PreviewProvider {
     static var previews: some View {
         SettingsUI()
-            .environmentObject(DDragonSettings())
+            .environmentObject(SettingsState())
     }
 }
+#endif

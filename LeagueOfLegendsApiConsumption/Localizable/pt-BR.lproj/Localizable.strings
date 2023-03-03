@@ -6,6 +6,9 @@
   
 */
 
+// Home UI
+"Home.Title"="Início";
+
 // Settings UI
 "Settings.Title"="Configurações";
 "Settings.ServerSectionHeader"="Servidor";
